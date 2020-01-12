@@ -60,7 +60,7 @@ set sidescroll=1     "set num of chars that sidescroll scrolls by
 " ==========Plugins==========
 
 call plug#begin('~/.vim/plugged')
-    Plug 'junegunn/fzf.vim', { 'dir': '~/.fzf','do': './install --all'}
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf','do': './install --all'}
     Plug 'scrooloose/nerdtree'
     Plug 'Xuyuanp/nerdtree-git-plugin'
     Plug 'airblade/vim-gitgutter'
