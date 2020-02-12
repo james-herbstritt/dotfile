@@ -10,7 +10,7 @@ set incsearch    "find the next match as search is typed
 
 " ==========Color Scheme==========
 
-colo evening      "set color scheme
+colo fruchtig
 set termguicolors "set 256 bit color
  
 
@@ -47,7 +47,7 @@ endif
 set backup
 set backupdir=~/.vim/vimtmp//
 " sets directory for undo files
-set undodir=~/vim/vimtmp//
+set undodir=~/.vim/vimtmp//
 " sets directory for swp files
 set directory=~/.vim/vimtmp//
 
@@ -60,20 +60,21 @@ set sidescroll=1     "set num of chars that sidescroll scrolls by
 " ==========Plugins==========
 
 call plug#begin('~/.vim/plugged')
-    Plug 'junegunn/fzf.vim', { 'dir': '~/.fzf','do': './install --all'}
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf','do': './install --all'}
     Plug 'scrooloose/nerdtree'
     Plug 'Xuyuanp/nerdtree-git-plugin'
     Plug 'airblade/vim-gitgutter'
     Plug 'ervandew/supertab'
+    Plug 'tpope/vim-fugitive'
     Plug 'valloric/YouCompleteMe'
     Plug 'dense-analysis/ale'
     Plug 'townk/vim-autoclose'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    Plug 'chrisbra/csv.vim'
     Plug 'sheerun/vim-polyglot'
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
+    Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 call plug#end()
 
 let g:lightline = {
@@ -81,13 +82,13 @@ let g:lightline = {
       \ }
 set laststatus=2
 set noshowmode
-
 map <C-n> :NERDTreeToggle<CR>
 map <C-f> :FZF<CR>
 
-let g:airline_theme='ayu_dark'
+let g:airline_theme='light'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#fugitiveline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']

@@ -104,6 +104,8 @@ alias gpl='git pull'
 alias gps='git push'
 alias gmg='git merge'
 alias gap='git add --patch'
+alias gaa='git add -A'
+alias gcam='git commit -am'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -148,3 +150,5 @@ export NVM_DIR="/home/james/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+. ~/Documents/programs/z/z.sh
