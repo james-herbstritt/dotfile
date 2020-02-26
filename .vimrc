@@ -21,6 +21,7 @@ set tabstop=4               "sets default tab len to 4
 set softtabstop=4           "allows backspace to delete tab converted to spaces
 set expandtab               "converts tab to spaces
 set autoindent		        "always set autoindenting on
+set autowrite               "write on buffer switch
 set textwidth=80            "sets linewidth to 80
 set wrap                    "wraps lines
 set linebreak               "doesnt split words when wrapping
@@ -60,20 +61,15 @@ set sidescroll=1     "set num of chars that sidescroll scrolls by
 " ==========Plugins==========
 
 call plug#begin('~/.vim/plugged')
-    Plug 'junegunn/fzf', { 'dir': '~/.fzf','do': './install --all'}
-    Plug 'scrooloose/nerdtree'
-    Plug 'Xuyuanp/nerdtree-git-plugin'
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf','do': './install --all'} 
+    Plug 'scrooloose/nerdtree' 
+    Plug 'Xuyuanp/nerdtree-git-plugin' 
     Plug 'airblade/vim-gitgutter'
-    Plug 'ervandew/supertab'
-    Plug 'tpope/vim-fugitive'
-    Plug 'valloric/YouCompleteMe'
-    Plug 'dense-analysis/ale'
     Plug 'townk/vim-autoclose'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'sheerun/vim-polyglot'
-    Plug 'SirVer/ultisnips'
-    Plug 'honza/vim-snippets'
+    Plug 'dense-analysis/ale'
     Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 call plug#end()
 
@@ -88,13 +84,5 @@ map <C-f> :FZF<CR>
 let g:airline_theme='light'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#ale#enabled = 1
-let g:airline#extensions#fugitiveline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion= ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
-
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<C-n>"
-let g:UltiSnipsJumpBackwardTrigger="<C-p>"
